@@ -3,21 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embedded Content</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
-        #embedded-frame {
-            width: 100%;
-            height: 100vh;
-            border: none;
-        }
-    </style>
+    <title>Learning Platform</title>
 </head>
 <body>
-    <iframe id="embedded-frame" src="https://swordbattle.io/" frameborder="0"></iframe>
+
+<h1>Learning Platform</h1>
+
+<div>
+    <h2>Lessons</h2>
+    <ul>
+        <li><a href="#" onclick="loadLesson('Statistics', 'https://zohoho.org/gfiles/10/')">Statistics</a></li>
+        <li><a href="#" onclick="loadLesson('Calculus', 'https://frizby.live/lesson-detail/lesson-13.html')">Calculus</a></li>
+        <li><a href="#" onclick="loadLesson('Cartography', 'https://frizby.live/lesson-detail/lesson-41.html')">Cartography</a></li>
+        <li><a href="#" onclick="loadLesson('Basketball', 'https://frizby.live/lesson-lesson-54.html')">Basketball</a></li>
+        <li><a href="#" onclick="loadLesson('ELA', 'https://frizby.live/lesson-detail/lesson-8.html')">ELA</a></li>
+        <li><a href="#" onclick="loadLesson('Computer Science', 'https://frizby.live/lesson-detail/lesson-94.html')">Computer Science</a></li>
+    </ul>
+</div>
+
+<div id="lessonContent">
+    <!-- Content will be loaded here -->
+</div>
+
+<script>
+    function loadLesson(lessonName, lessonUrl) {
+        const lessonContent = document.getElementById('lessonContent');
+        lessonContent.innerHTML = '<h2>' + lessonName + '</h2>';
+        lessonContent.innerHTML += '<iframe src="' + lessonUrl + '" width="100%" height="600px"></iframe>';
+    }
+</script>
+
 </body>
 </html>
